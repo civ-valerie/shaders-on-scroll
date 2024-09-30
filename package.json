@@ -2,13 +2,12 @@
   "name": "shaders-on-scroll",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.html",
-  "scripts": {
-    "start": "parcel src/index.html --open",
-    "clean": "rm -rf dist/*",
-    "build:parcel": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./",
-    "build": "npm run clean && npm run build:parcel"
-  },
+"scripts": {
+  "start": "parcel src/index.html --open",
+  "clean": "rimraf dist/*",
+  "build:parcel": "parcel build src/index.html --no-content-hash --no-source-maps --public-url ./",
+  "build": "npm run clean && npm run build:parcel"
+},
   "repository": {
     "type": "git",
     "url": "git://github.com/Faboolea/shaders-on-scroll"
@@ -17,7 +16,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "latest"
+    "@parcel/transformer-glsl": "^2.12.0",
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "latest",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
     "gsap": "^3.7.0",
